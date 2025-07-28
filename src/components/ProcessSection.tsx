@@ -2,81 +2,83 @@ import { Calendar, Wrench, Rocket, ArrowRight, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-
-const steps = [
-  {
-    number: "01",
-    icon: Calendar,
-    title: "Create Your Business Plan",
-    description: "Complete your business plan and insights at our dedicated portal",
-    details: [
-      "Visit www.business.moilapp.com/insight",
-      "AI-powered business plan generation",
-      "Market research and insights",
-      "Complete at your own pace"
-    ],
-    duration: "Self-paced",
-    highlight: "START HERE"
-  },
-  {
-    number: "02", 
-    icon: Wrench,
-    title: "Landing Page Creation",
-    description: "We create your first landing page and send it for review",
-    details: [
-      "Professional landing page design",
-      "Based on your business plan",
-      "Sent directly to your email",
-      "Ready for your feedback"
-    ],
-    duration: "3-5 days",
-    highlight: "DELIVERED"
-  },
-  {
-    number: "03",
-    icon: Calendar,
-    title: "Review Call & Updates",
-    description: "15-minute call to review your landing page and request changes",
-    details: [
-      "Schedule convenient 15-min call",
-      "Review landing page together",
-      "Request any updates needed",
-      "Professional guidance included"
-    ],
-    duration: "15 min",
-    highlight: "PERSONALIZED"
-  },
-  {
-    number: "04",
-    icon: Rocket,
-    title: "Final Delivery",
-    description: "Updates delivered within 24 hours of your review call",
-    details: [
-      "Fast 24-hour turnaround",
-      "All requested changes included",
-      "Final landing page delivered",
-      "Ready to launch your business"
-    ],
-    duration: "24 hours",
-    highlight: "GUARANTEED"
-  }
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ProcessSection() {
+  const { t } = useLanguage();
+
+  const steps = [
+    {
+      number: "01",
+      icon: Calendar,
+      title: t('process.new.step1.title'),
+      description: t('process.new.step1.desc'),
+      details: [
+        t('process.step1.detail1'),
+        t('process.step1.detail2'),
+        t('process.step1.detail3'),
+        t('process.step1.detail4')
+      ],
+      duration: t('process.step1.duration'),
+      highlight: t('process.step1.highlight')
+    },
+    {
+      number: "02", 
+      icon: Wrench,
+      title: t('process.new.step2.title'),
+      description: t('process.new.step2.desc'),
+      details: [
+        t('process.step2.detail1'),
+        t('process.step2.detail2'),
+        t('process.step2.detail3'),
+        t('process.step2.detail4')
+      ],
+      duration: t('process.step2.duration'),
+      highlight: t('process.step2.highlight')
+    },
+    {
+      number: "03",
+      icon: Calendar,
+      title: t('process.new.step3.title'),
+      description: t('process.new.step3.desc'),
+      details: [
+        t('process.step3.detail1'),
+        t('process.step3.detail2'),
+        t('process.step3.detail3'),
+        t('process.step3.detail4')
+      ],
+      duration: t('process.step3.duration'),
+      highlight: t('process.step3.highlight')
+    },
+    {
+      number: "04",
+      icon: Rocket,
+      title: t('process.new.step4.title'),
+      description: t('process.new.step4.desc'),
+      details: [
+        t('process.step4.detail1'),
+        t('process.step4.detail2'),
+        t('process.step4.detail3'),
+        t('process.step4.detail4')
+      ],
+      duration: t('process.step4.duration'),
+      highlight: t('process.step4.highlight')
+    }
+  ];
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 fade-in">
           <Badge className="mb-6 px-4 py-2 bg-orange-light/30 text-orange-cta">
-            Simple 3-Step Process
+            {t('process.section.badge')}
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            How It Works:
-            <span className="gradient-text"> From Idea to Launch</span>
+            {t('process.section.title').split(':')[0]}:
+            <span className="gradient-text">{t('process.section.title').split(':')[1]}</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            We've streamlined everything so you can focus on what matters - growing your business
+            {t('process.section.subtitle')}
           </p>
         </div>
 
@@ -149,16 +151,16 @@ export default function ProcessSection() {
         {/* Timeline Summary */}
         <div className="mt-16 max-w-2xl mx-auto fade-in">
           <Card className="glass p-8 text-center">
-            <h3 className="text-2xl font-bold mb-4">Complete Timeline</h3>
+            <h3 className="text-2xl font-bold mb-4">{t('process.timeline.title')}</h3>
             <div className="flex items-center justify-center gap-4 text-sm md:text-lg flex-wrap">
-              <span className="text-muted-foreground">Today:</span>
-              <span className="font-semibold">Create Plan</span>
+              <span className="text-muted-foreground">{t('process.timeline.today')}</span>
+              <span className="font-semibold">{t('process.timeline.create')}</span>
               <ArrowRight className="w-4 h-4 text-muted-foreground" />
-              <span className="text-muted-foreground">Day 5:</span>
-              <span className="font-semibold">Review Call</span>
+              <span className="text-muted-foreground">{t('process.timeline.day5')}</span>
+              <span className="font-semibold">{t('process.timeline.review')}</span>
               <ArrowRight className="w-4 h-4 text-muted-foreground" />
-              <span className="text-muted-foreground">Day 6:</span>
-              <span className="font-semibold text-green-success">Launch Ready</span>
+              <span className="text-muted-foreground">{t('process.timeline.day6')}</span>
+              <span className="font-semibold text-green-success">{t('process.timeline.launch')}</span>
             </div>
             
             <div className="mt-6">
@@ -167,7 +169,7 @@ export default function ProcessSection() {
                 className="btn-cta text-lg px-8 py-4"
                 onClick={() => window.open('https://business.moilapp.com/register', '_blank')}
               >
-                Start Your Business Plan
+                {t('process.timeline.cta')}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>

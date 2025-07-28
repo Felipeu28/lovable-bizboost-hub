@@ -2,55 +2,57 @@ import { Shield, CheckCircle, RefreshCw, Clock, ArrowRight } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-
-const guarantees = [
-  {
-    icon: Shield,
-    title: "30-Day Money-Back Guarantee",
-    description: "If you're not completely satisfied with your landing page, business plan, and market insights, we'll refund every penny.",
-    details: [
-      "No questions asked refund policy",
-      "Full refund within 30 days",
-      "Keep all delivered materials",
-      "Instant refund processing"
-    ]
-  },
-  {
-    icon: CheckCircle,
-    title: "Quality Guarantee",
-    description: "Your landing page will be professionally designed, mobile-optimized, and ready to convert visitors into customers.",
-    details: [
-      "Professional design standards",
-      "Mobile-responsive guarantee",
-      "SEO optimization included",
-      "Conversion-optimized copy"
-    ]
-  },
-  {
-    icon: Clock,
-    title: "7-Day Guarantee",
-    description: "Delivery in 3-5 days after business plan completion, with our 7-day guarantee for peace of mind.",
-    details: [
-      "3-5 day delivery promise",
-      "7-day quality guarantee",
-      "Progress updates included",
-      "Priority support included"
-    ]
-  },
-  {
-    icon: RefreshCw,
-    title: "One Revision Round",
-    description: "After your review call, we provide one comprehensive revision to perfect your landing page.",
-    details: [
-      "One revision round included",
-      "Expert feedback and guidance", 
-      "24-hour turnaround on changes",
-      "Direct designer communication"
-    ]
-  }
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function GuaranteeSection() {
+  const { t } = useLanguage();
+
+  const guarantees = [
+    {
+      icon: Shield,
+      title: t('guarantee.guarantee1.title'),
+      description: t('guarantee.guarantee1.desc'),
+      details: [
+        t('guarantee.guarantee1.detail1'),
+        t('guarantee.guarantee1.detail2'),
+        t('guarantee.guarantee1.detail3'),
+        t('guarantee.guarantee1.detail4')
+      ]
+    },
+    {
+      icon: CheckCircle,
+      title: t('guarantee.guarantee2.title'),
+      description: t('guarantee.guarantee2.desc'),
+      details: [
+        t('guarantee.guarantee2.detail1'),
+        t('guarantee.guarantee2.detail2'),
+        t('guarantee.guarantee2.detail3'),
+        t('guarantee.guarantee2.detail4')
+      ]
+    },
+    {
+      icon: Clock,
+      title: t('guarantee.guarantee3.title'),
+      description: t('guarantee.guarantee3.desc'),
+      details: [
+        t('guarantee.guarantee3.detail1'),
+        t('guarantee.guarantee3.detail2'),
+        t('guarantee.guarantee3.detail3'),
+        t('guarantee.guarantee3.detail4')
+      ]
+    },
+    {
+      icon: RefreshCw,
+      title: t('guarantee.guarantee4.title'),
+      description: t('guarantee.guarantee4.desc'),
+      details: [
+        t('guarantee.guarantee4.detail1'),
+        t('guarantee.guarantee4.detail2'),
+        t('guarantee.guarantee4.detail3'),
+        t('guarantee.guarantee4.detail4')
+      ]
+    }
+  ];
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-6">
@@ -58,14 +60,14 @@ export default function GuaranteeSection() {
         <div className="text-center max-w-3xl mx-auto mb-16 fade-in">
           <Badge className="mb-6 px-4 py-2 bg-green-light/30 text-green-success">
             <Shield className="w-4 h-4 mr-2" />
-            Risk-Free Guarantee
+            {t('guarantee.section.badge')}
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Your Success is
-            <span className="gradient-text"> 100% Guaranteed</span>
+            {t('guarantee.section.title').split(' ').slice(0, 3).join(' ')}
+            <span className="gradient-text"> {t('guarantee.section.title').split(' ').slice(3).join(' ')}</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            We're so confident in our service that we guarantee your satisfaction with multiple promises
+            {t('guarantee.section.subtitle')}
           </p>
         </div>
 
@@ -109,11 +111,10 @@ export default function GuaranteeSection() {
         {/* Bottom CTA */}
         <div className="text-center fade-in">
           <h3 className="text-2xl font-bold mb-4">
-            What Do You Have to Lose?
+            {t('guarantee.bottom.title')}
           </h3>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            With our comprehensive guarantees, you're completely protected. 
-            The only risk is missing out on this limited-time $300 pricing.
+            {t('guarantee.bottom.desc')}
           </p>
           
           <Button 
@@ -121,12 +122,12 @@ export default function GuaranteeSection() {
             className="btn-cta text-lg px-8 py-4"
             onClick={() => window.open('https://business.moilapp.com/register', '_blank')}
           >
-            Start Risk-Free Today - $300
+            {t('guarantee.bottom.cta')}
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
           
           <p className="text-sm text-muted-foreground mt-4">
-            Backed by our 30-day money-back guarantee
+            {t('guarantee.bottom.note')}
           </p>
         </div>
       </div>

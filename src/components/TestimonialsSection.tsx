@@ -1,6 +1,7 @@
 import { Star, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 import testimonial1 from "@/assets/testimonial-1.jpg";
 import testimonial2 from "@/assets/testimonial-2.jpg";
 import testimonial3 from "@/assets/testimonial-3.jpg";
@@ -50,23 +51,25 @@ const trustLogos = [
 ];
 
 export default function TestimonialsSection() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-24 bg-secondary/30">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Join 500+ Successful 
-            <span className="gradient-text"> Business Launches</span>
+            {t('testimonials.section.title').split(' ').slice(0, 2).join(' ')}
+            <span className="gradient-text"> {t('testimonials.section.title').split(' ').slice(2).join(' ')}</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            Real results from real entrepreneurs who trusted us with their launch
+            {t('testimonials.section.subtitle')}
           </p>
         </div>
 
         {/* Trust Logos */}
         <div className="flex justify-center items-center gap-8 mb-16 opacity-60 fade-in">
-          <span className="text-sm font-medium text-muted-foreground">AS FEATURED IN:</span>
+          <span className="text-sm font-medium text-muted-foreground">{t('testimonials.section.featured')}</span>
           {trustLogos.map((logo, index) => (
             <div key={index} className="text-lg font-bold text-muted-foreground">
               {logo}
@@ -127,11 +130,11 @@ export default function TestimonialsSection() {
             className="btn-cta text-lg px-8 py-4"
             onClick={() => window.open('https://business.moilapp.com/register', '_blank')}
           >
-            Start Your Success Story - $300
+            {t('testimonials.section.cta')}
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
           <p className="text-sm text-muted-foreground mt-4">
-            Join the next batch of successful entrepreneurs
+            {t('testimonials.section.note')}
           </p>
         </div>
       </div>
