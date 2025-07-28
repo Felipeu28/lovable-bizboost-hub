@@ -11,9 +11,9 @@ interface LanguageContextType {
 const translations = {
   en: {
     // Hero Section
-    'hero.title.line1': 'Professional Landing Pages',
-    'hero.title.line2': 'That Convert Visitors Into Customers',
-    'hero.subtitle': 'Get a high-converting landing page that showcases your business professionally and drives real results. Perfect for service businesses, consultants, and entrepreneurs.',
+    'hero.title.line1': 'Data-Driven Landing Pages',
+    'hero.title.line2': 'Built From Real Market Research',
+    'hero.subtitle': 'Get a landing page created directly from your business plan with real market analysis and competitor research - not generic templates.',
     'hero.cta': 'Create Your Business Plan - $300',
     'hero.guarantee': '7-day money-back guarantee',
     'hero.feature1': 'Mobile-Optimized Design',
@@ -93,9 +93,9 @@ const translations = {
   },
   es: {
     // Hero Section
-    'hero.title.line1': 'Páginas de Aterrizaje Profesionales',
-    'hero.title.line2': 'Que Convierten Visitantes en Clientes',
-    'hero.subtitle': 'Obtén una página de aterrizaje de alta conversión que muestre tu negocio profesionalmente y genere resultados reales. Perfecto para empresas de servicios, consultores y emprendedores.',
+    'hero.title.line1': 'Páginas de Aterrizaje Basadas en Datos',
+    'hero.title.line2': 'Construidas con Investigación de Mercado Real',
+    'hero.subtitle': 'Obtén una página de aterrizaje creada directamente desde tu plan de negocio con análisis de mercado real e investigación de competidores - no plantillas genéricas.',
     'hero.cta': 'Crear Tu Plan de Negocio - $300',
     'hero.guarantee': 'Garantía de devolución de dinero de 7 días',
     'hero.feature1': 'Diseño Optimizado para Móviles',
