@@ -2,41 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* High-Converting Landing Page Design System */
 
 @layer base {
   :root {
+    /* Core Brand Colors */
+    --navy-deep: 222 84% 5%;
+    --navy-primary: 222 47% 11%;
+    --blue-electric: 217 91% 60%;
+    --blue-light: 213 97% 87%;
+    --green-success: 158 64% 52%;
+    --green-light: 158 64% 85%;
+    --orange-cta: 38 92% 50%;
+    --orange-light: 38 92% 85%;
+    
+    /* Background System */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --background-secondary: 220 14% 96%;
+    --background-glass: 217 33% 17% / 0.1;
+    --foreground: 222 84% 5%;
+    
+    /* Semantic Colors */
+    --primary: var(--navy-primary);
+    --primary-foreground: 0 0% 98%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: var(--navy-primary);
+    --accent: var(--blue-electric);
+    --accent-foreground: 0 0% 98%;
+    --success: var(--green-success);
+    --success-foreground: 0 0% 98%;
+    --warning: var(--orange-cta);
+    --warning-foreground: 0 0% 98%;
+    
+    /* Interactive Elements */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: var(--navy-primary);
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: var(--blue-electric);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--navy-deep)), hsl(var(--navy-primary)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--navy-deep)) 0%, hsl(217 33% 17%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(var(--blue-electric)), hsl(var(--blue-light)));
+    --gradient-success: linear-gradient(135deg, hsl(var(--green-success)), hsl(var(--green-light)));
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    
+    /* Shadows */
+    --shadow-glass: 0 8px 32px rgba(31, 38, 135, 0.37);
+    --shadow-hover: 0 20px 40px rgba(31, 38, 135, 0.2);
+    --shadow-button: 0 4px 15px rgba(59, 130, 246, 0.35);
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.1);
+    
+    /* Animation Variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +122,159 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Glass morphism effect */
+  .glass {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: var(--shadow-glass);
+  }
+  
+  /* Hero gradient background */
+  .hero-bg {
+    background: var(--gradient-hero);
+    position: relative;
+  }
+  
+  .hero-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at top, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  
+  /* CTA Button Styles */
+  .btn-cta {
+    background: hsl(var(--orange-cta));
+    color: hsl(var(--warning-foreground));
+    box-shadow: var(--shadow-button);
+    transition: var(--transition-spring);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+  }
+  
+  .btn-cta:hover::before {
+    left: 100%;
+  }
+  
+  .btn-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+  }
+  
+  /* Accent Button */
+  .btn-accent {
+    background: var(--gradient-accent);
+    color: hsl(var(--accent-foreground));
+    transition: var(--transition-smooth);
+  }
+  
+  .btn-accent:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-hover);
+  }
+  
+  /* Feature Cards */
+  .feature-card {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    transition: var(--transition-smooth);
+    position: relative;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-card);
+    border-color: hsl(var(--accent) / 0.3);
+  }
+  
+  /* Testimonial Cards */
+  .testimonial-card {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition-smooth);
+  }
+  
+  .testimonial-card:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-hover);
+  }
+  
+  /* Floating Animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  /* Fade in animations */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+  }
+  
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Pulse animation for success elements */
+  .pulse-success {
+    animation: pulse-success 2s infinite;
+  }
+  
+  @keyframes pulse-success {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+    50% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+  }
+  
+  /* Counter animation */
+  .counter {
+    font-variant-numeric: tabular-nums;
+  }
+  
+  /* Gradient text */
+  .gradient-text {
+    background: var(--gradient-accent);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+  
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
 }
