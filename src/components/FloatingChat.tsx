@@ -118,7 +118,10 @@ export default function FloatingChat() {
 
       {/* Toggle Button */}
       <Button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => {
+          const whatsappUrl = `https://wa.me/7373474267?text=${encodeURIComponent("Hi! I'm interested in your landing page service.")}`;
+          window.open(whatsappUrl, '_blank');
+        }}
         className="h-14 w-14 rounded-full btn-cta shadow-lg hover:scale-110 transition-transform"
       >
         <MessageCircle className="h-6 w-6" />

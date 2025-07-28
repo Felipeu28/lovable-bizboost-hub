@@ -131,7 +131,11 @@ export default function FeaturesSection() {
 
         {/* Enhanced Bottom CTA */}
         <div className="text-center fade-in">
-          <Button size="lg" className="btn-cta text-lg px-8 py-4 hover-scale group relative overflow-hidden">
+          <Button 
+            size="lg" 
+            className="btn-cta text-lg px-8 py-4 hover-scale group relative overflow-hidden"
+            onClick={() => window.open('https://business.moilapp.com/register', '_blank')}
+          >
             <span className="relative z-10">Get All Three for Just $300</span>
             <ArrowRight className="ml-2 h-5 w-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
             <div className="absolute inset-0 bg-gradient-to-r from-orange-cta to-orange-light opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

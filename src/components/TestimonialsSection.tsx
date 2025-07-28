@@ -122,7 +122,11 @@ export default function TestimonialsSection() {
 
         {/* Bottom CTA */}
         <div className="text-center fade-in">
-          <Button size="lg" className="btn-cta text-lg px-8 py-4">
+          <Button 
+            size="lg" 
+            className="btn-cta text-lg px-8 py-4"
+            onClick={() => window.open('https://business.moilapp.com/register', '_blank')}
+          >
             Start Your Success Story - $300
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>

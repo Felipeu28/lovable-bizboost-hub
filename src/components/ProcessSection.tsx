@@ -162,11 +162,13 @@ export default function ProcessSection() {
             </div>
             
             <div className="mt-6">
-              <Button size="lg" className="btn-cta text-lg px-8 py-4" asChild>
-                <a href="https://www.business.moilapp.com/insight" target="_blank" rel="noopener noreferrer">
-                  Start Your Business Plan
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
+              <Button 
+                size="lg" 
+                className="btn-cta text-lg px-8 py-4"
+                onClick={() => window.open('https://business.moilapp.com/register', '_blank')}
+              >
+                Start Your Business Plan
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
           </Card>

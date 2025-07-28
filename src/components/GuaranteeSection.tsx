@@ -116,7 +116,11 @@ export default function GuaranteeSection() {
             The only risk is missing out on this limited-time $300 pricing.
           </p>
           
-          <Button size="lg" className="btn-cta text-lg px-8 py-4">
+          <Button 
+            size="lg" 
+            className="btn-cta text-lg px-8 py-4"
+            onClick={() => window.open('https://business.moilapp.com/register', '_blank')}
+          >
             Start Risk-Free Today - $300
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
