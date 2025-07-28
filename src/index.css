@@ -235,7 +235,7 @@
     50% { transform: translateY(-10px); }
   }
   
-  /* Fade in animations */
+  /* Enhanced Fade in animations */
   .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -245,6 +245,50 @@
   .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Hover scale animation */
+  .hover-scale {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  /* Smooth animations */
+  .animate-in {
+    animation-fill-mode: both;
+  }
+
+  .slide-in-from-top-5 {
+    animation: slideInFromTop 0.5s ease-out;
+  }
+
+  .slide-in-from-bottom-5 {
+    animation: slideInFromBottom 0.5s ease-out;
+  }
+
+  @keyframes slideInFromTop {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInFromBottom {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
   /* Pulse animation for success elements */
