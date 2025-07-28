@@ -6,6 +6,7 @@ import ProcessSection from "@/components/ProcessSection";
 import UrgencySection from "@/components/UrgencySection";
 import GuaranteeSection from "@/components/GuaranteeSection";
 import FloatingChat from "@/components/FloatingChat";
+import LanguageToggle from "@/components/LanguageToggle";
 
 const Index = () => {
   // Add scroll animations
@@ -32,6 +33,7 @@ const Index = () => {
 
   return (
     <main className="min-h-screen">
+      <LanguageToggle />
       <HeroSection />
       <FeaturesSection />
       <TestimonialsSection />
