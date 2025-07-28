@@ -103,20 +103,13 @@ export default function HeroSection() {
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-cta to-orange-light opacity-0 group-hover:opacity-100 transition-opacity" />
               </Button>
               
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-white/20 text-white hover:bg-white/10 text-lg px-8 py-4 hover-scale hover:border-white/40 transition-all duration-300"
-              >
-                See What's Included
-              </Button>
             </div>
 
             {/* Enhanced Trust Indicators */}
             <div className="flex items-center justify-center gap-8 pt-6 animate-in slide-in-from-bottom-5 duration-700" style={{ animationDelay: '800ms' }}>
               <div className="flex items-center gap-2 group">
                 <Clock className="w-5 h-5 text-green-success group-hover:scale-110 transition-transform" />
-                <span className="text-sm text-gray-300">7-day delivery</span>
+                <span className="text-sm text-gray-300">3-5 day delivery</span>
               </div>
               <div className="flex items-center gap-2 group">
                 <Shield className="w-5 h-5 text-green-success animate-pulse group-hover:scale-110 transition-transform" />

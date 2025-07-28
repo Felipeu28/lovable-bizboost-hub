@@ -119,20 +119,6 @@ export default function TestimonialsSection() {
           ))}
         </div>
 
-        {/* Video Testimonial Placeholder */}
-        <div className="max-w-4xl mx-auto mb-16 fade-in">
-          <Card className="overflow-hidden">
-            <div className="aspect-video bg-navy-deep relative flex items-center justify-center">
-              <div className="text-center text-white space-y-4">
-                <div className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center mx-auto">
-                  <ArrowRight className="w-8 h-8 rotate-90" />
-                </div>
-                <h3 className="text-xl font-semibold">Watch How Sarah Built Her $100k Business</h3>
-                <p className="text-gray-300">3-minute success story</p>
-              </div>
-            </div>
-          </Card>
-        </div>
 
         {/* Bottom CTA */}
         <div className="text-center fade-in">

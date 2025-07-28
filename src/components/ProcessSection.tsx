@@ -93,12 +93,12 @@ export default function ProcessSection() {
                 <div key={index} className="relative fade-in" style={{ animationDelay: `${index * 0.3}s` }}>
                   {/* Step Number Circle */}
                   <div className="relative mb-8">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-accent to-blue-light flex items-center justify-center mx-auto border-4 border-white shadow-lg relative z-10">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-accent to-blue-light flex items-center justify-center mx-auto border-4 border-background shadow-lg relative z-20">
                       <span className="text-white font-bold text-xl">{step.number}</span>
                     </div>
                     
                     {/* Highlight Badge */}
-                    <Badge className={`absolute -top-2 left-1/2 transform -translate-x-1/2 text-xs px-2 py-1 ${
+                    <Badge className={`absolute -top-2 left-1/2 transform -translate-x-1/2 text-xs px-2 py-1 z-30 ${
                       index === 0 ? 'bg-green-success text-white' :
                       index === 1 ? 'bg-blue-electric text-white' :
                       'bg-orange-cta text-white'

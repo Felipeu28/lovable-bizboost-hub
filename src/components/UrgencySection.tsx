@@ -78,7 +78,7 @@ export default function UrgencySection() {
           </div>
 
           {/* Countdown Timer */}
-          <Card className="glass mb-8 fade-in">
+          <Card className="glass mb-8 fade-in bg-white/10 backdrop-blur-md">
             <CardContent className="p-8">
               <div className="flex items-center justify-center gap-2 mb-6">
                 <Clock className="w-6 h-6 text-orange-cta" />
@@ -93,7 +93,7 @@ export default function UrgencySection() {
                   { label: 'Seconds', value: timeLeft.seconds }
                 ].map((item, index) => (
                   <div key={index} className="text-center">
-                    <div className="bg-white/10 rounded-lg p-4 mb-2">
+                    <div className="bg-navy-deep/80 rounded-lg p-4 mb-2 border border-white/20">
                       <span className="text-3xl font-bold text-white tabular-nums">
                         {item.value.toString().padStart(2, '0')}
                       </span>
@@ -107,7 +107,7 @@ export default function UrgencySection() {
 
           {/* Spots Remaining */}
           <div className="mb-8 fade-in">
-            <Card className="glass inline-block">
+            <Card className="glass inline-block bg-white/10 backdrop-blur-md border border-white/20">
               <CardContent className="p-6">
                 <div className="flex items-center gap-4">
                   <Users className="w-6 h-6 text-green-success" />
@@ -139,7 +139,7 @@ export default function UrgencySection() {
           {/* Pricing Comparison */}
           <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto mb-12 fade-in">
             {/* Current Offer */}
-            <Card className="glass border-2 border-green-success relative">
+            <Card className="glass border-2 border-green-success relative bg-white/10 backdrop-blur-md">
               <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                 <Badge className="bg-green-success text-white px-4 py-1">
                   This Month Only
@@ -153,7 +153,7 @@ export default function UrgencySection() {
             </Card>
 
             {/* Regular Price */}
-            <Card className="glass opacity-60">
+            <Card className="glass opacity-60 bg-white/5 backdrop-blur-md">
               <CardContent className="p-6 text-center">
                 <h3 className="text-xl font-semibold text-white mb-2">Regular Price</h3>
                 <div className="text-4xl font-bold text-gray-400 mb-2">$1,000</div>

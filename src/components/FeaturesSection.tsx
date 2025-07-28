@@ -6,12 +6,12 @@ const features = [
   {
     icon: Globe,
     title: "Professional Landing Page That Converts",
-    description: "Mobile-responsive design with SEO optimization and A/B tested layouts for maximum conversions",
+    description: "A single, focused landing page designed to convert visitors into customers - not a full website",
     benefits: [
-      "Mobile-responsive design",
-      "SEO optimization included", 
-      "A/B tested layout for maximum conversions",
-      "Fast loading times"
+      "Single-page landing page design",
+      "Mobile-responsive and fast loading", 
+      "Conversion-optimized layout",
+      "Professional copy and design"
     ],
     outcome: "Start capturing leads from day one",
     color: "blue"
