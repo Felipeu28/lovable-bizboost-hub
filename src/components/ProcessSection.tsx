@@ -7,44 +7,58 @@ const steps = [
   {
     number: "01",
     icon: Calendar,
-    title: "Book Your Strategy Call",
-    description: "15-minute consultation to understand your business goals and target market",
+    title: "Create Your Business Plan",
+    description: "Complete your business plan and insights at our dedicated portal",
     details: [
-      "Free 15-minute consultation",
-      "Business goals assessment",
-      "Target market identification",
-      "Custom strategy development"
+      "Visit www.business.moilapp.com/insight",
+      "AI-powered business plan generation",
+      "Market research and insights",
+      "Complete at your own pace"
     ],
-    duration: "15 min",
-    highlight: "FREE"
+    duration: "Self-paced",
+    highlight: "START HERE"
   },
   {
     number: "02", 
     icon: Wrench,
-    title: "We Build Your Package",
-    description: "Our expert team creates your landing page, business plan, and market insights",
+    title: "Landing Page Creation",
+    description: "We create your first landing page and send it for review",
     details: [
       "Professional landing page design",
-      "Comprehensive business plan",
-      "AI-powered market research",
-      "Conversion optimization"
+      "Based on your business plan",
+      "Sent directly to your email",
+      "Ready for your feedback"
     ],
-    duration: "7 days",
-    highlight: "GUARANTEED"
+    duration: "3-5 days",
+    highlight: "DELIVERED"
   },
   {
     number: "03",
-    icon: Rocket,
-    title: "Launch & Grow Your Business", 
-    description: "Go live with confidence and start capturing leads immediately",
+    icon: Calendar,
+    title: "Review Call & Updates",
+    description: "15-minute call to review your landing page and request changes",
     details: [
-      "Website launch and setup",
-      "Lead capture system activation",
-      "30-day support included",
-      "Growth strategy guidance"
+      "Schedule convenient 15-min call",
+      "Review landing page together",
+      "Request any updates needed",
+      "Professional guidance included"
     ],
-    duration: "Day 8+",
-    highlight: "RESULTS"
+    duration: "15 min",
+    highlight: "PERSONALIZED"
+  },
+  {
+    number: "04",
+    icon: Rocket,
+    title: "Final Delivery",
+    description: "Updates delivered within 24 hours of your review call",
+    details: [
+      "Fast 24-hour turnaround",
+      "All requested changes included",
+      "Final landing page delivered",
+      "Ready to launch your business"
+    ],
+    duration: "24 hours",
+    highlight: "GUARANTEED"
   }
 ];
 
@@ -71,7 +85,7 @@ export default function ProcessSection() {
           {/* Connection Lines */}
           <div className="hidden lg:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-electric via-green-success to-orange-cta" />
           
-          <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
+          <div className="grid lg:grid-cols-4 gap-6 lg:gap-8">
             {steps.map((step, index) => {
               const Icon = step.icon;
               
@@ -136,21 +150,23 @@ export default function ProcessSection() {
         <div className="mt-16 max-w-2xl mx-auto fade-in">
           <Card className="glass p-8 text-center">
             <h3 className="text-2xl font-bold mb-4">Complete Timeline</h3>
-            <div className="flex items-center justify-center gap-4 text-lg">
+            <div className="flex items-center justify-center gap-4 text-sm md:text-lg flex-wrap">
               <span className="text-muted-foreground">Today:</span>
-              <span className="font-semibold">Book Call</span>
-              <ArrowRight className="w-5 h-5 text-muted-foreground" />
-              <span className="text-muted-foreground">Day 7:</span>
-              <span className="font-semibold">Ready to Launch</span>
-              <ArrowRight className="w-5 h-5 text-muted-foreground" />
-              <span className="text-muted-foreground">Day 8:</span>
-              <span className="font-semibold text-green-success">Start Making Money</span>
+              <span className="font-semibold">Create Plan</span>
+              <ArrowRight className="w-4 h-4 text-muted-foreground" />
+              <span className="text-muted-foreground">Day 5:</span>
+              <span className="font-semibold">Review Call</span>
+              <ArrowRight className="w-4 h-4 text-muted-foreground" />
+              <span className="text-muted-foreground">Day 6:</span>
+              <span className="font-semibold text-green-success">Launch Ready</span>
             </div>
             
             <div className="mt-6">
-              <Button size="lg" className="btn-cta text-lg px-8 py-4">
-                Book Your Free Strategy Call
-                <Calendar className="ml-2 h-5 w-5" />
+              <Button size="lg" className="btn-cta text-lg px-8 py-4" asChild>
+                <a href="https://www.business.moilapp.com/insight" target="_blank" rel="noopener noreferrer">
+                  Start Your Business Plan
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
               </Button>
             </div>
           </Card>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MessageCircle, X, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -29,6 +29,33 @@ const faqs = [
 export default function FloatingChat() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedFaq, setSelectedFaq] = useState<number | null>(null);
+  const [isTyping, setIsTyping] = useState(false);
+  const [typedText, setTypedText] = useState("");
+  const [showAnswer, setShowAnswer] = useState(false);
+
+  const typeText = (text: string) => {
+    setIsTyping(true);
+    setShowAnswer(false);
+    setTypedText("");
+    
+    let index = 0;
+    const timer = setInterval(() => {
+      if (index < text.length) {
+        setTypedText(text.slice(0, index + 1));
+        index++;
+      } else {
+        clearInterval(timer);
+        setIsTyping(false);
+        setShowAnswer(true);
+      }
+    }, 30);
+  };
+
+  useEffect(() => {
+    if (selectedFaq !== null) {
+      typeText(faqs[selectedFaq].answer);
+    }
+  }, [selectedFaq]);
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
@@ -58,7 +85,16 @@ export default function FloatingChat() {
                 </button>
                 {selectedFaq === index && (
                   <div className="mt-2 text-xs text-muted-foreground animate-in slide-in-from-top-2 duration-200">
-                    {faq.answer}
+                    {isTyping && (
+                      <div className="flex items-center gap-1 mb-2">
+                        <div className="w-1 h-1 bg-accent rounded-full animate-pulse" />
+                        <div className="w-1 h-1 bg-accent rounded-full animate-pulse" style={{ animationDelay: '0.2s' }} />
+                        <div className="w-1 h-1 bg-accent rounded-full animate-pulse" style={{ animationDelay: '0.4s' }} />
+                        <span className="ml-2 text-accent">Typing...</span>
+                      </div>
+                    )}
+                    {showAnswer && <div>{typedText}</div>}
+                    {!showAnswer && !isTyping && <div>{typedText}</div>}
                   </div>
                 )}
               </div>
