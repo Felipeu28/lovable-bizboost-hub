@@ -60,6 +60,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				moil: {
+					purple: 'hsl(var(--navy-primary))',
+					'purple-light': 'hsl(var(--blue-light))',
+					orange: 'hsl(var(--orange-cta))',
+					'orange-light': 'hsl(var(--orange-light))'
+				},
 				navy: {
 					deep: 'hsl(var(--navy-deep))',
 					primary: 'hsl(var(--navy-primary))'

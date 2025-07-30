@@ -6,15 +6,19 @@
 
 @layer base {
   :root {
-    /* Core Brand Colors */
-    --navy-deep: 222 84% 5%;
-    --navy-primary: 222 47% 11%;
-    --blue-electric: 217 91% 60%;
-    --blue-light: 213 97% 87%;
+    /* Core Brand Colors - Moil Brand */
+    --moil-purple: 250 36% 50%;
+    --moil-purple-dark: 250 45% 35%;
+    --moil-orange: 20 100% 60%;
+    --moil-orange-light: 20 100% 85%;
+    --navy-deep: 250 45% 20%;
+    --navy-primary: 250 36% 50%;
+    --blue-electric: 250 60% 65%;
+    --blue-light: 250 40% 85%;
     --green-success: 158 64% 52%;
     --green-light: 158 64% 85%;
-    --orange-cta: 38 92% 50%;
-    --orange-light: 38 92% 85%;
+    --orange-cta: 20 100% 60%;
+    --orange-light: 20 100% 85%;
     
     /* Background System */
     --background: 0 0% 100%;
@@ -22,29 +26,29 @@
     --background-glass: 217 33% 17% / 0.1;
     --foreground: 222 84% 5%;
     
-    /* Semantic Colors */
-    --primary: var(--navy-primary);
+    /* Semantic Colors - Moil Brand */
+    --primary: var(--moil-purple);
     --primary-foreground: 0 0% 98%;
-    --secondary: 220 14% 96%;
-    --secondary-foreground: var(--navy-primary);
-    --accent: var(--blue-electric);
+    --secondary: 250 15% 96%;
+    --secondary-foreground: var(--moil-purple);
+    --accent: var(--moil-orange);
     --accent-foreground: 0 0% 98%;
     --success: var(--green-success);
     --success-foreground: 0 0% 98%;
-    --warning: var(--orange-cta);
+    --warning: var(--moil-orange);
     --warning-foreground: 0 0% 98%;
     
     /* Interactive Elements */
     --card: 0 0% 100%;
-    --card-foreground: var(--navy-primary);
+    --card-foreground: var(--moil-purple);
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: var(--blue-electric);
+    --ring: var(--moil-purple);
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--navy-deep)), hsl(var(--navy-primary)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--navy-deep)) 0%, hsl(217 33% 17%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(var(--blue-electric)), hsl(var(--blue-light)));
+    /* Gradients - Moil Brand */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--moil-purple-dark)), hsl(var(--moil-purple)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--moil-purple-dark)) 0%, hsl(250 40% 25%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(var(--moil-orange)), hsl(var(--moil-orange-light)));
     --gradient-success: linear-gradient(135deg, hsl(var(--green-success)), hsl(var(--green-light)));
     --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
     
@@ -156,9 +160,9 @@
     pointer-events: none;
   }
   
-  /* CTA Button Styles */
+  /* CTA Button Styles - Moil Orange */
   .btn-cta {
-    background: hsl(var(--orange-cta));
+    background: hsl(var(--moil-orange));
     color: hsl(var(--warning-foreground));
     box-shadow: var(--shadow-button);
     transition: var(--transition-spring);
@@ -183,7 +187,7 @@
   
   .btn-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+    box-shadow: 0 8px 25px hsl(var(--moil-orange) / 0.4);
   }
   
   /* Accent Button */
